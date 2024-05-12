@@ -10,7 +10,7 @@ export const GET = async () => {
     return NextResponse.json({
       message: "Get all items",
       items: query.docs.map((doc) => ({ ...doc.data(), id: doc.id })),
-    }).status(201);
+    });
   } catch (error) {
     return NextResponse.json({ message: error.message });
   }
